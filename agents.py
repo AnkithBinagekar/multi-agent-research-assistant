@@ -1,30 +1,32 @@
 from crewai import Agent
+from crewai import LLM
 
-ollama_config = {
-    "model": "ollama/phi3",
-    "base_url": "http://localhost:11434"
-}
+# Local Ollama LLM
+llm = LLM(
+    model="ollama/tinyllama",
+    base_url="http://localhost:11434"
+)
 
 researcher = Agent(
     role="Researcher",
-    goal="Find useful information about a topic",
+    goal="Research the given topic thoroughly",
     backstory="Expert internet researcher",
-    llm=ollama_config,
+    llm=llm,
     verbose=True
 )
 
 analyst = Agent(
     role="Analyst",
-    goal="Analyze and summarize research",
-    backstory="Critical thinker",
-    llm=ollama_config,
+    goal="Analyze research and extract insights",
+    backstory="Critical thinker and analyst",
+    llm=llm,
     verbose=True
 )
 
 writer = Agent(
     role="Writer",
-    goal="Write clear final report",
-    backstory="Professional writer",
-    llm=ollama_config,
+    goal="Write a well-structured report",
+    backstory="Professional technical writer",
+    llm=llm,
     verbose=True
 )
