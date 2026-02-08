@@ -12,7 +12,7 @@ researcher = Agent(
     goal="Research the given topic thoroughly",
     backstory="Expert internet researcher",
     llm=llm,
-    verbose=True
+    verbose=False
 )
 
 analyst = Agent(
@@ -20,7 +20,7 @@ analyst = Agent(
     goal="Analyze research and extract insights",
     backstory="Critical thinker and analyst",
     llm=llm,
-    verbose=True
+    verbose=False
 )
 
 writer = Agent(
@@ -28,5 +28,5 @@ writer = Agent(
     goal="Write a well-structured report",
     backstory="Professional technical writer",
     llm=llm,
-    verbose=True
+    verbose=False
 )
