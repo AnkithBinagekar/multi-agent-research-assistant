@@ -1,71 +1,135 @@
-# 🧠 Multi-Agent Research Assistant 🤖
+# 🧠 Multi-Agent Research Assistant (Local LLMs)
 
-A Python-based multi-agent system that uses **LLM-powered agents** (Researcher, Analyst, Writer) to collaboratively research a topic and generate a structured, high-quality report.  
-The system runs fully on **local LLMs using Ollama**, enabling private and cost-free inference.
+A **multi-agent AI system** built in Python where specialized agents collaborate to **simulate a research workflow** and generate a structured report from a user-provided topic.
 
----
-
-## 🚀 Features
-
-- Multiple collaborating AI agents  
-- Graph-based execution flow using LangGraph  
-- Local LLM support via Ollama  
-- Modular and extensible architecture  
-- CLI-based topic input  
-- Automatic report generation  
+The project focuses on **agent orchestration, reasoning flow, and system design**, running entirely on **local LLMs via Ollama** — no paid APIs, no cloud dependency.
 
 ---
 
-## 🏗 Architecture
+## 🚀 Key Highlights
+
+- Multi-agent architecture with clear role separation  
+- Sequential research → analysis → writing workflow  
+- Fully local, cost-free LLM inference using Ollama  
+- Modular and extensible agent/task design  
+- CLI + backend integration ready for UI consumption  
+- Designed to demonstrate **agent reasoning**, not just text generation  
+
+---
+
+## 🧠 What This Project Demonstrates
+
+This project is intended to showcase:
+
+- **Agent collaboration patterns**
+- **LLM-driven reasoning workflows**
+- **Task decomposition and execution**
+- **End-to-end AI system integration**
+
+> ⚠️ **Important Note**  
+> This system currently runs **without live web search or retrieval**.  
+> All outputs are generated based on the LLM’s internal knowledge and **may not be factually accurate**.  
+> This is a **known and intentional limitation**, addressed in the Future Enhancements section.
+
+---
+
+## 🏗️ System Architecture
+# 🧠 Multi-Agent Research Assistant (Local LLMs)
+
+A **multi-agent AI system** built in Python where specialized agents collaborate to **simulate a research workflow** and generate a structured report from a user-provided topic.
+
+The project focuses on **agent orchestration, reasoning flow, and system design**, running entirely on **local LLMs via Ollama** — no paid APIs, no cloud dependency.
+
+---
+
+## 🚀 Key Highlights
+
+- Multi-agent architecture with clear role separation  
+- Sequential research → analysis → writing workflow  
+- Fully local, cost-free LLM inference using Ollama  
+- Modular and extensible agent/task design  
+- CLI + backend integration ready for UI consumption  
+- Designed to demonstrate **agent reasoning**, not just text generation  
+
+---
+
+## 🧠 What This Project Demonstrates
+
+This project is intended to showcase:
+
+- **Agent collaboration patterns**
+- **LLM-driven reasoning workflows**
+- **Task decomposition and execution**
+- **End-to-end AI system integration**
+
+> ⚠️ **Important Note**  
+> This system currently runs **without live web search or retrieval**.  
+> All outputs are generated based on the LLM’s internal knowledge and **may not be factually accurate**.  
+> This is a **known and intentional limitation**, addressed in the Future Enhancements section.
+
+---
+
+## 🏗️ System Architecture
 User Topic
 ↓
-Researcher Agent → Analyst Agent → Writer Agent
+Researcher Agent
+↓
+Analyst Agent
+↓
+Writer Agent
 ↓
 Final Structured Report
 
 
-**Agent Roles**
+### 🧑‍🤝‍🧑 Agent Roles
 
-- **Researcher** → Collects relevant information  
-- **Analyst** → Organizes and analyzes findings  
-- **Writer** → Produces final report  
+- **Researcher**  
+  Simulates information gathering and topic exploration.
+
+- **Analyst**  
+  Extracts insights, identifies themes, and organizes findings.
+
+- **Writer**  
+  Produces a coherent, structured final report.
 
 ---
 
 ## 🧰 Tech Stack
 
 - Python  
+- CrewAI  
 - LangChain  
 - LangGraph  
-- Ollama  
-- TinyLlama / Phi-3  
+- Ollama (Local LLM Runtime)  
+- TinyLlama / Phi-3 / Llama 3  
 
 ---
 
-## ⚙️ Installation
+## ⚙️ Installation & Setup
 
-### 1. Clone the Repository
+### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/AnkithBinagekar/multi-agent-research-assistant.git
 cd multi-agent-research-assistant
-2. Create Virtual Environment
+2️⃣ Create & Activate Virtual Environment
 python -m venv venv
 venv\Scripts\activate
 
-3. Install Dependencies
+3️⃣ Install Dependencies
 pip install -r requirements.txt
 
-4. Install & Start Ollama
+4️⃣ Install & Start Ollama
 
-Download from: https://ollama.com
+Download Ollama:
+https://ollama.com
 
-Start server:
+Start the server:
 
 ollama serve
 
 
-Pull model:
+Pull a lightweight model (recommended for 8GB RAM):
 
 ollama pull tinyllama
 
@@ -73,26 +137,22 @@ ollama pull tinyllama
 python graph.py
 
 
-Enter a topic when prompted.
+Enter a topic when prompted (e.g., Goa Tourism, Future of AI).
 
 📄 Output
 
-The final report is:
+Final report is printed in the terminal
 
-Printed in terminal
+Optionally saved to output.txt
 
-Saved as:
+🧪 Sample Output (Excerpt)
 
-output.txt
+FINAL REPORT: Future of Artificial Intelligence
 
-🧪 Example Output
-FINAL REPORT:
-The Impact of Artificial Intelligence on Society
-
-1. Ethical Considerations
-2. Human-AI Collaboration
-3. Economic Implications
-4. Technological Advancements
+1. Overview of AI Evolution
+2. Applications Across Industries
+3. Ethical & Societal Implications
+4. Limitations and Challenges
 5. Future Outlook
 
 📁 Project Structure
@@ -107,15 +167,20 @@ multi-agent-research-assistant/
 ├── README.md
 └── output.txt
 
-🔮 Future Enhancements
 
-Web search integration
+Future Enhancements
 
-Long-term memory for agents
+🌐 Web search integration (DuckDuckGo / Wikipedia)
 
-PDF / DOCX export
+📚 Retrieval-Augmented Generation (RAG)
 
-Web UI
+🧠 Long-term agent memory
+
+📄 PDF / DOCX export
+
+🖥️ Full web-based UI
+
+✅ Fact grounding and citations
 
 👨‍💻 Author
 
