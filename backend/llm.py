@@ -1,6 +1,7 @@
-from langchain_ollama import ChatOllama
+from crewai import LLM
 
-llm = ChatOllama(
-    model="phi3",
-    base_url="http://localhost:11434"
+llm = LLM(
+    model="ollama/tinyllama",
+    base_url="http://localhost:11434",
+    temperature=0.7
 )

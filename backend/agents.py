@@ -1,11 +1,5 @@
 from crewai import Agent
-from crewai import LLM
-
-# Local Ollama LLM
-llm = LLM(
-    model="ollama/tinyllama",
-    base_url="http://localhost:11434"
-)
+from llm import llm
 
 researcher = Agent(
     role="Researcher",
